@@ -6,39 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="calculadora.css">
+    <script src="calculadora.js" defer></script>
 </head>
 
 <body>
-    <h1>Calculadora | Gustavo da Silva - Guzinn01 - Github</h1>
+    <h1>Calculadora</h1>
     <div class="calculator">
-        <input type="text" disabled id="display-cont">
-        <input type="text" disabled id="display">
-
-        <div class="box-buttons">
-            <button onclick="clean('C')">C</button>
-            <button onclick="back('<')">&lt;</button>
-            <button onclick="dividir('/')">/</button>
-            <button onclick="multiplicar('*')">*</button>
-            <button onclick="insertToDisplay('7')">7</button>
-            <button onclick="insertToDisplay('8')">8</button>
-            <button onclick="insertToDisplay('9')">9</button>
-            <button onclick="subtrair('-')">-</button>
-            <button onclick="insertToDisplay('4')">4</button>
-            <button onclick="insertToDisplay('5')">5</button>
-            <button onclick="insertToDisplay('6')">6</button>
-            <button onclick="somar('+')">+</button>
-            <button onclick="insertToDisplay('1')">1</button>
-            <button onclick="insertToDisplay('2')">2</button>
-            <button onclick="insertToDisplay('3')">3</button>
-            <button class="btn-zero" onclick="insertToDisplay('0')">0</button>
-            <button onclick="insertToDisplay('.')">.</button>
-            <button class="btn-result" onclick="calcular('=')">=</button>
+        <div class="display-container">
+            <div id="display-cont" class="display-history"></div>
+            <div id="display" class="display-main">0</div>
         </div>
 
+        <div class="box-buttons">
+            <button data-action="clear">C</button>
+            <button data-action="backspace" aria-label="Apagar último número">&lt;</button>
+            <button data-action="divide">/</button>
+            <button data-action="multiply">*</button>
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button data-action="subtract">-</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-action="add">+</button>
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button class="btn-result" data-action="calculate">=</button>
+            <button class="btn-zero" data-value="0">0</button>
+            <button data-action="decimal">.</button>
+        </div>
     </div>
-
-    <script src="calculadora.js"></script>
-
 </body>
 
 </html>
